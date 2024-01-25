@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import NavBarr from "./Components/NavBarr";
+import ForHim from "./Components/ForHim";
+import ForHer from "./Components/ForHer";
+import Cake from "./Components/Cake";
+import Flower from "./Components/Flower";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import PersonalizedGift from "./Components/PersonalizedGift";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <NavBarr />
+        <Routes>
+          <Route path="/for-him" element={<ForHim />}></Route>
+          <Route path="/for-her" element={<ForHer />} />
+          <Route path="/cake" element={<Cake />} />
+          <Route path="/flower" element={<Flower />} />
+          <Route path="/Personalized-Gift" element={<PersonalizedGift />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
